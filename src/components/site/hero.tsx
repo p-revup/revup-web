@@ -4,7 +4,6 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-
 export function Hero() {
   return (
     <section id="top" className="relative h-fit w-full overflow-hidden py-28 lg:py-36">
