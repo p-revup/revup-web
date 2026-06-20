@@ -74,11 +74,7 @@ const organizationSchema = {
   slogan: 'Empowering Young People to Lead and Live Purposefully',
   description:
     'To empower young people through leadership development, mentorship, skills acquisition, and impact-driven opportunities that help them discover purpose and transform their communities.',
-  sameAs: [
-    'https://twitter.com/revupinitiative',
-    'https://instagram.com/revupinitiative',
-    'https://linkedin.com/company/revupinitiative'
-  ]
+  sameAs: ['https://instagram.com/revup_initiative']
 };
 
 export default function RootLayout({

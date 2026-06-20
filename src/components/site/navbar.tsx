@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Menu, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -42,10 +43,17 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-2 text-white">
-          <span className="bg-brand text-brand-foreground flex size-9 items-center justify-center rounded-xl">
-            <Zap className="size-5" fill="currentColor" />
+          <span className="flex size-9 items-center justify-center overflow-clip rounded-full bg-white">
+            <Image
+              src="/logo.png"
+              alt="Revup logo icon"
+              width={100}
+              height={100}
+              loading="eager"
+              className="h-full w-full object-cover"
+            />
           </span>
-          <span className="text-lg font-extrabold tracking-tight">RevUp</span>
+          <span className="text-brand text-lg font-extrabold tracking-tight">Rev Up</span>
         </a>
 
         <div className="hidden items-center gap-1 md:flex">
