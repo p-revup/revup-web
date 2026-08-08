@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { animate, useInView, useMotionValue, useReducedMotion } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
 
 type CountUpProps = {
   to: number;
@@ -28,7 +28,7 @@ export function CountUp({ to, duration = 2, className, suffix = '', prefix = '' 
     const controls = animate(motionValue, to, {
       duration,
       ease: [0.22, 1, 0.36, 1],
-      onUpdate: (latest) => setDisplay(Math.round(latest))
+      onUpdate: (latest) => setDisplay(Math.round(latest)),
     });
     return () => controls.stop();
   }, [inView, to, duration, motionValue, reduceMotion]);

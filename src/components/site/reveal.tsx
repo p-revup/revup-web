@@ -8,7 +8,7 @@ const directions = {
   down: { y: -28, x: 0 },
   left: { x: 28, y: 0 },
   right: { x: -28, y: 0 },
-  none: { x: 0, y: 0 }
+  none: { x: 0, y: 0 },
 };
 
 type RevealProps = {
@@ -24,7 +24,7 @@ export function Reveal({
   className,
   delay = 0,
   direction = 'up',
-  as = 'div'
+  as = 'div',
 }: RevealProps) {
   const offset = directions[direction];
   const MotionTag = motion[as];
@@ -45,8 +45,8 @@ export function Reveal({
 const containerVariants: Variants = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.05 }
-  }
+    transition: { staggerChildren: 0.12, delayChildren: 0.05 },
+  },
 };
 
 const itemVariants: Variants = {
@@ -54,8 +54,8 @@ const itemVariants: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-  }
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 export function StaggerGroup({ children, className }: { children: ReactNode; className?: string }) {

@@ -1,0 +1,51 @@
+#!/usr/bin/env sh
+
+if [ -z "$husky_skip_init" ]; then
+  git_user_name=$(git config --get user.name)
+
+  echo "husky - $hook_name hook started by $git_user_name"
+  echo "Hi $git_user_name, while we run some checks, you can grab a coffee ☕️ or tea 🍵, or even better, a beer 🍺."
+
+  debug () {
+    if [ "$HUSKY_DEBUG" = "1" ]; then
+      echo "husky (debug) - $1"
+    fi
+  }
+
+  readonly hook_name="$(basename -- "$0")"
+  debug "starting $hook_name..."
+
+  if [ "$HUSKY" = "0" ]; then
+    debug "HUSKY env variable is set to 0, skipping hook"
+    exit 0
+  fi
+
+  if [ -f ~/.huskyrc ]; then
+    debug "sourcing ~/.huskyrc"
+    . ~/.huskyrc
+  fi
+
+  readonly husky_skip_init=1
+  export husky_skip_init
+
+  # 1. Run Biome to Format, Lint, and Sort Imports on staged changes
+  debug "Running Biome on staged files"
+  bunx --bun biome check --write --staged --no-errors-on-unmatched
+
+  if [ $? -ne 0 ]; then
+    echo "husky - $hook_name hook: Biome linting/formatting failed. Please fix issues before committing."
+    exit 1
+  fi
+
+  # 2. Update the Git Index if Biome auto-fixed or modified any staged files
+  git update-index --again
+
+  # 3. Run type checking
+  debug "Running bun check:types"
+  bun check:types
+
+  if [ $? -ne 0 ]; then
+    echo "husky - $hook_name hook: Type checking failed. Please fix type errors."
+    exit 1
+  fi
+fi

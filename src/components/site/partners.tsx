@@ -1,12 +1,12 @@
 import {
-  Globe,
-  Building2,
-  GraduationCap,
   Briefcase,
+  Building2,
+  Globe,
+  GraduationCap,
   HeartHandshake,
   Landmark,
+  Leaf,
   Rocket,
-  Leaf
 } from 'lucide-react';
 import { Reveal } from '@/components/site/reveal';
 
@@ -18,14 +18,14 @@ const partners = [
   { name: 'NextGen Corp', icon: Building2 },
   { name: 'WorkWise', icon: Briefcase },
   { name: 'CareFoundation', icon: HeartHandshake },
-  { name: 'GreenRoots', icon: Leaf }
+  { name: 'GreenRoots', icon: Leaf },
 ];
 
 function PartnerChip({ name, Icon }: { name: string; Icon: (typeof partners)[number]['icon'] }) {
   return (
-    <div className="text-muted-foreground flex shrink-0 items-center gap-2.5 px-8">
+    <div className="flex shrink-0 items-center gap-2.5 px-8 text-muted-foreground">
       <Icon className="size-7" />
-      <span className="font-heading text-xl font-bold tracking-tight">{name}</span>
+      <span className="font-bold font-heading text-xl tracking-tight">{name}</span>
     </div>
   );
 }
@@ -35,10 +35,10 @@ export function Partners() {
     <section className="theme-light bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-primary text-sm font-semibold tracking-widest uppercase">
+          <p className="font-semibold text-primary text-sm uppercase tracking-widest">
             Our Partners
           </p>
-          <h2 className="font-heading mt-3 text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
+          <h2 className="mt-3 text-balance font-extrabold font-heading text-4xl tracking-tight sm:text-5xl">
             Together We Create Greater Impact
           </h2>
         </Reveal>

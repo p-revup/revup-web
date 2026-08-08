@@ -1,16 +1,16 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans, Geist_Mono } from 'next/font/google';
+import { Geist_Mono, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 
 const jakarta = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
   subsets: ['latin'],
-  display: 'swap'
+  display: 'swap',
 });
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
-  subsets: ['latin']
+  subsets: ['latin'],
 });
 
 const SITE_URL = 'https://revup-initiative.org';
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: 'RevUp Initiative — Empowering Young People to Lead and Live Purposefully',
-    template: '%s | RevUp Initiative'
+    template: '%s | RevUp Initiative',
   },
   description:
     'RevUp Initiative empowers young people through leadership development, mentorship, skills acquisition, and impact-driven opportunities that help them discover purpose and transform their communities.',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     'youth movement',
     'skills acquisition',
     'community impact',
-    'RevUp Initiative'
+    'RevUp Initiative',
   ],
   authors: [{ name: 'RevUp Initiative' }],
   creator: 'RevUp Initiative',
@@ -47,23 +47,23 @@ export const metadata: Metadata = {
         url: '/hero-youth-leaders.png',
         width: 1200,
         height: 630,
-        alt: 'Young leaders of the RevUp Initiative movement'
-      }
-    ]
+        alt: 'Young leaders of the RevUp Initiative movement',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'RevUp Initiative — Empowering Young People to Lead and Live Purposefully',
     description:
       'Join a global movement raising a generation of purpose-driven leaders who create meaningful impact.',
-    images: ['/hero-youth-leaders.png']
+    images: ['/hero-youth-leaders.png'],
   },
-  generator: 'v0.app'
+  generator: 'v0.app',
 };
 
 export const viewport: Viewport = {
   themeColor: '#121212',
-  colorScheme: 'dark'
+  colorScheme: 'dark',
 };
 
 const organizationSchema = {
@@ -74,11 +74,11 @@ const organizationSchema = {
   slogan: 'Empowering Young People to Lead and Live Purposefully',
   description:
     'To empower young people through leadership development, mentorship, skills acquisition, and impact-driven opportunities that help them discover purpose and transform their communities.',
-  sameAs: ['https://instagram.com/revup_initiative']
+  sameAs: ['https://instagram.com/revup_initiative'],
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {

@@ -1,13 +1,13 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-heading: var(--font-jakarta), 'Plus Jakarta Sans Fallback';
-  --font-sans: var(--font-jakarta), 'Plus Jakarta Sans Fallback';
-  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+  --font-heading: var(--font-jakarta), "Plus Jakarta Sans Fallback";
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans Fallback";
+  --font-mono: var(--font-geist-mono), "Geist Mono Fallback";
 
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
@@ -63,7 +63,7 @@
   --card-foreground: #ffffff;
   --popover: #181818;
   --popover-foreground: #ffffff;
-  --primary: #0A9435;
+  --primary: #0a9435;
   --primary-foreground: #08110b;
   --secondary: #181818;
   --secondary-foreground: #ffffff;
@@ -74,14 +74,14 @@
   --destructive: #ef4444;
   --border: #2a2a2a;
   --input: #2a2a2a;
-  --ring: #0A9435;
+  --ring: #0a9435;
 
-  --brand: #0A9435;
+  --brand: #0a9435;
   --brand-foreground: #08110b;
   --brand-dark: #14532d;
   --brand-soft: #dcfce7;
 
-  --chart-1: #0A9435;
+  --chart-1: #0a9435;
   --chart-2: #16a34a;
   --chart-3: #4ade80;
   --chart-4: #14532d;
@@ -90,12 +90,12 @@
 
   --sidebar: #181818;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #0A9435;
+  --sidebar-primary: #0a9435;
   --sidebar-primary-foreground: #08110b;
   --sidebar-accent: #242424;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #2a2a2a;
-  --sidebar-ring: #0A9435;
+  --sidebar-ring: #0a9435;
 }
 
 /* Light sections scope their own tokens */
