@@ -28,7 +28,7 @@ const stories = [
     role: 'Holy Child Secondary student',
     image: '',
     quote:
-      'I want to be hard-working to be a better person in life and I want to overcome challenges when I face it.',
+      'After the session, I want to be hard-working to be a better person in life and I want to overcome challenges when I face it.',
   },
 ];
 
